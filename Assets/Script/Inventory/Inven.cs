@@ -7,6 +7,7 @@ public class Inven : MonoBehaviour
     List<Weapon> weapons = new List<Weapon>();
     List<ConsumeItem> actives = new List<ConsumeItem>();
     Weapon basicGun;
+    public GameObject script;
     // int blank = 2;
     int weaponIndex = 1;
     int activeIndex = 0;
@@ -60,6 +61,8 @@ public class Inven : MonoBehaviour
             return;
         }
         weapons.Add(newWeapon);
+        // Managers.InvenUI.AddWeaponButton(newWeapon);
+        script.GetComponent<ItemButton>().CreateButton();
     }
 
     public void ThrowWeapon()
@@ -86,7 +89,7 @@ public class Inven : MonoBehaviour
         // return actives[activeIndex];
     }
 
-    void GetActive(ConsumeItem newActive)
+    public void GetActive(ConsumeItem newActive)
     {
         if (actives.Count == 5)
         {
@@ -94,6 +97,8 @@ public class Inven : MonoBehaviour
             return;
         }
         actives.Add(newActive);
+        // Managers.InvenUI.AddActiveButton(newActive);
+        Managers.InvenUI.AddActiveButton(newActive);
     }
 
     void ThrowActive()

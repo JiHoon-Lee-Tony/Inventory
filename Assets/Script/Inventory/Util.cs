@@ -48,13 +48,47 @@ public class Util
 
         else
         {
-            foreach (T component in go.GetComponentsInChildren<T>())
+            T component = FindInChildren<T>(go.transform, name);
+            if (component != null)
+            {
+                return component;
+            }
+
+            /*foreach (T component in go.GetComponentsInChildren<T>())
             {
                 if (string.IsNullOrEmpty(name) || component.name == name)
                     return component;
-            }
+            }*/
         }
 
         return null;
+    }
+
+
+    // 비활성화된 오브젝트도 찾기
+    private static T FindInChildren<T>(Transform parent, string name) where T : UnityEngine.Object
+    {
+        T component = null;
+        for (int i = 0; i < parent.childCount; i++)
+        {
+            Transform childTransform = parent.GetChild(i);
+            if (string.IsNullOrEmpty(name) || childTransform.name == name)
+            {
+                component = childTransform.GetComponent<T>();
+                if (component != null)
+                {
+                    return component;
+                }
+            }
+
+            // 재귀적으로 하위 자식 검색
+            component = FindInChildren<T>(childTransform, name);
+            if (component != null)
+            {
+                return component;
+            }
+        }
+
+        return component;
     }
 }

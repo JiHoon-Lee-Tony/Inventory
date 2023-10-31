@@ -57,18 +57,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Inventory\UI\InvenUI.cs" />
+    <Compile Include="Assets\Script\Inventory\Managers.cs" />
     <Compile Include="Assets\Script\Inventory\UI\ItemButton.cs" />
     <Compile Include="Assets\Script\Inventory\ConsumeItem.cs" />
+    <Compile Include="Assets\Script\Inventory\UI\UIManager.cs" />
+    <Compile Include="Assets\Script\Inventory\UI\UIBase.cs" />
     <Compile Include="Assets\Script\Inventory\ResourceManager.cs" />
     <Compile Include="Assets\Script\Inventory\Controller.cs" />
-    <Compile Include="Assets\Script\Inventory\Inven.cs" />
-    <Compile Include="Assets\Script\Inventory\Weapon.cs" />
-    <Compile Include="Assets\Script\Inventory\Managers.cs" />
-    <Compile Include="Assets\Script\Inventory\UI\UIManager.cs" />
     <Compile Include="Assets\Script\Inventory\UI\UIPopup.cs" />
-    <Compile Include="Assets\Script\Inventory\UI\UIButton.cs" />
+    <Compile Include="Assets\Script\Inventory\Inven.cs" />
     <Compile Include="Assets\Script\Inventory\Util.cs" />
-    <Compile Include="Assets\Script\Inventory\UI\UIBase.cs" />
+    <Compile Include="Assets\Script\Inventory\Weapon.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
