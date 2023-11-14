@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class ItemButton : UIPopup
 {
+    [SerializeField]
+    Button btn;
     enum Buttons
     {
         ImageButton
@@ -24,18 +26,8 @@ public class ItemButton : UIPopup
         // GetButton((int)Buttons.PointButton).gameObject.BindEvent(OnButtonClicked);
     }
 
-    public void CreateButton()
-    {
-        Transform itemBtn = Managers.Resource.Instantiate("itemButton").transform;
-        GameObject invenUI = GameObject.Find("InvenUI");
-        GameObject weaponFrame = Util.FindChild(invenUI, "WeaponFrame", true);
-        Transform itemSort = Util.FindChild<Transform>(weaponFrame, "ItemSort", true);
-        itemBtn.SetParent(itemSort);
-    }
-
-
     public void OnButtonClicked(PointerEventData data)
     {
-
+        Debug.Log("Button Click");
     }
 }
